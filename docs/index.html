@@ -8,12 +8,14 @@
     body { font-family: system-ui, Arial, sans-serif; margin: 0; padding: 24px; line-height: 1.5; }
     .wrap { max-width: 900px; margin: 0 auto; }
     h1 { font-size: 1.4rem; margin: 0 0 0.5rem; }
+    h2 { font-size: 1.1rem; margin: 1rem 0 0.5rem; }
     p.desc { margin: 0 0 1rem; color: #333; }
     .video {
       background: #000;
       border: 1px solid #ddd;
       border-radius: 10px;
       padding: 8px;
+      margin-bottom: 1rem;
     }
     video { width: 100%; height: auto; border-radius: 6px; }
     .links { margin-top: 0.75rem; display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -26,12 +28,13 @@
 </head>
 <body>
   <div class="wrap">
-    <h1>Observed vs Modelled Events 2018 JJA </h1>
+    <h1>Observed vs Modelled Events 2018 JJA</h1>
     <p class="desc">Short animation showing observed vs modelled hail events. Use the controls to play/pause, scrub, or open full-screen.</p>
 
+    <!-- Video 1 -->
+    <h2>Animation (baseline)</h2>
     <div class="video">
-      <video controls playsinline preload="metadata" poster="poster.jpg">
-        <!-- Provide multiple sources for broader compatibility (MP4 first is fine) -->
+      <video controls playsinline preload="metadata" poster="poster.jpg" aria-label="Observed vs modelled events animation">
         <source src="animation.mp4" type="video/mp4" />
         <source src="animation.webm" type="video/webm" />
         Sorry, your browser doesn't support embedded videos. You can
@@ -39,15 +42,30 @@
       </video>
     </div>
 
+    <!-- Video 2 -->
+    <h2>Animation (Region 6)</h2>
+    <div class="video">
+      <video controls playsinline preload="metadata" poster="poster_r6.jpg" aria-label="Observed vs modelled events animation for Region 6">
+        <source src="animation_r6.mp4" type="video/mp4" />
+        <!-- Add a WEBM if available:
+        <source src="animation_r6.webm" type="video/webm" />
+        -->
+        Sorry, your browser doesn't support embedded videos. You can
+        <a href="animation_r6.mp4">download the MP4 here</a>.
+      </video>
+    </div>
+
     <div class="links">
-      <a class="button" href="animation.mp4" download>Download MP4</a>
+      <a class="button" href="animation.mp4" download>Download MP4 (baseline)</a>
+      <a class="button" href="animation_r6.mp4" download>Download MP4 (Region 6)</a>
+      <a class="button" href="https://www.linkedin.com/in/rebekka-koch-8b0087274" target="_blank" rel="noopener">Contact me on LinkedIn</a>
       <!-- If you have a README or paper, link it too -->
       <!-- <a class="button" href="paper.pdf">Paper</a> -->
       <!-- <a class="button" href="README.html">About this animation</a> -->
     </div>
 
     <footer>
-      Tip: If the video doesn’t start on mobile, wait for the preview to buffer or tap the play icon.
+      Tip: If a video doesn’t start on mobile, wait for the preview to buffer or tap the play icon.
       Autoplay with sound is often blocked; keep it user-controlled for conferences.
     </footer>
   </div>
